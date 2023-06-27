@@ -16,6 +16,10 @@ class LinkedList {
     this.size = 0;
   }
 
+  /**
+  * Appends new node at the end of the list with given value.
+  * @param {string} value
+  */
   append(value){
     const newNode = new Node(value);
 
@@ -29,6 +33,10 @@ class LinkedList {
     this.size++;
   }
 
+  /**
+  * Inserts new node at the beginning of the list with given value.
+  * @param {string} value
+  */
   prepend(value){
     const newNode = new Node(value);
 
@@ -42,6 +50,11 @@ class LinkedList {
     this.size++;
   }
 
+  /**
+  * Return node at given index, null if it does not exist.
+  * @param {number} index
+  * @returns {Node|null} Node at index position, null if index is out of range.
+  */
   at(index){
     let pointer = this.head;
     let count = 0;
@@ -56,6 +69,10 @@ class LinkedList {
     return null;
   }
 
+  /**
+  * Removes last node from the list and returns it.
+  * @returns {Node|null} Last node in the list, null if list is empty.
+  */  
   pop(){
     if(this.size === 0) return null;
     if(this.size === 1){
@@ -76,6 +93,12 @@ class LinkedList {
     return oldTail;
   }
 
+
+  /**
+  * Checks if the list contains given value.
+  * @param {string} value
+  * @returns {boolean}
+  */  
   contains(value){
     let pointer = this.head;
     while(pointer){
@@ -85,6 +108,11 @@ class LinkedList {
     return false;
   }
 
+  /**
+  * Returns first index that stores the value, null if it's not on the list.
+  * @param {string} value
+  * @returns {number|null}
+  */    
   find(value){
     let index = 0;
     let pointer = this.head;
@@ -98,6 +126,11 @@ class LinkedList {
     return null;
   }
 
+  /**
+  * Inserts new node in given index, does nothing if index is out of bounds.
+  * @param {string} value
+  * @param {number} index
+  */
   insertAt(value, index){
     if(index === 0){
       this.prepend(value);
@@ -106,7 +139,7 @@ class LinkedList {
       this.append(value);
       return;
     } else if (index > this.size){
-      return
+      return;
     }
 
     const newNode = new Node(value)
@@ -118,6 +151,10 @@ class LinkedList {
     this.size++;
   }
 
+  /**
+  * Removes node in given index, does nothing if index is out of bounds.
+  * @param {number} index
+  */
   removeAt(index){
     if(index === 0){
       this.head = this.head.nextNode;
@@ -135,6 +172,10 @@ class LinkedList {
     this.size--;
   }
 
+  /**
+  * Returns visual representation of the list.
+  * @returns {string}
+  */
   toString(){
     let result = "";
     let pointer = this.head;
