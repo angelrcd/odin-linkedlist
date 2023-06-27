@@ -98,6 +98,43 @@ class LinkedList {
     return null;
   }
 
+  insertAt(value, index){
+    if(index === 0){
+      this.prepend(value);
+      return;
+    } else if (index === this.size){
+      this.append(value);
+      return;
+    } else if (index > this.size){
+      return
+    }
+
+    const newNode = new Node(value)
+    const prev = this.at(index -1);
+    const next = this.at(index);
+
+    prev.nextNode = newNode;
+    newNode.nextNode = next;
+    this.size++;
+  }
+
+  removeAt(index){
+    if(index === 0){
+      this.head = this.head.nextNode;
+      this.size--;
+      return;
+    } else if(index === this.size - 1){
+      this.pop()
+      return;
+    } else if(this.size === 0){
+      return;
+    }
+
+    const prev = this.at(index - 1);
+    prev.nextNode = prev.nextNode.nextNode;
+    this.size--;
+  }
+
   toString(){
     let result = "";
     let pointer = this.head;
@@ -109,18 +146,3 @@ class LinkedList {
     return result
   }
 }
-
-const test = new LinkedList();
-test.prepend("test1")
-test.prepend("test2")
-test.prepend("test3")
-// console.log(test.head);
-// console.log(test.tail);
-console.log(test.toString());
-// console.log(test.size);
-test.pop()
-test.pop()
-test.prepend("test2")
-console.log(test.toString());
-console.log(test.contains("test1"));
-console.log(test.find(""));
