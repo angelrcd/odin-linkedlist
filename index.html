@@ -13,85 +13,79 @@
     <h1>Singly Linked List by angelrcd</h1>  
     <a href="https://github.com/angelrcd/odin-linkedlist">GitHub Repository</a>
   </header>
-  <section id="input-section">
-    <form autocomplete="off">
+  <div id="App">
+    <section id="input-section">
+      <form autocomplete="off">
+        <fieldset>
+          <legend>Input</legend>
+          <div>
+            <label for="append">Add a new node at the end of the linked list</label>
+            <div>
+              <input type="text" id="append" placeholder="value">
+              <button type="button" id="append-btn">Append</button>
+            </div>
+          </div>
+          <div>
+            <label for="prepend">Add a new node at the start of the linked list</label>
+            <div>
+              <input type="text" id="prepend" placeholder="value">
+              <button type="button" id="prepend-btn">Prepend</button>
+            </div>
+          </div>
+          <div>
+            <label for="at">Shows the node value at the given index</label>
+            <div>
+              <input type="number" id="at" placeholder="index">
+              <p id="at-result"></p>
+            </div>
+          </div>
+          <div>
+            <label for="find">Returns the index where given value was first found</label>
+            <div>
+              <input type="text" id="find" placeholder="value">
+              <p id="find-result"></p>
+            </div>
+          </div>
+          <div>
+            <label for="insert-at-value">Inserts new node with provided value at the given index</label>
+            <div>
+              <div>
+                <input id="insert-at-value" type="text" placeholder="value">
+                <input type="number" id="insert-at-index" placeholder="index">
+              </div>
+              <button type="button" id="insert-at-btn">Insert</button>
+            </div>
+          </div>
+          <div>
+            <label for="remove-at">Remove node at given index</label>
+            <div>
+              <div>
+                <input type="number" id="remove-at" placeholder="index">
+              </div>
+              <button type="button" id="remove-at-btn">Remove</button>
+            </div>
+          </div>
+          <div>
+            <p>Removes the last element from the list</p>
+            <button type="button" id="pop-btn">Pop</button>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+    <section>
       <fieldset>
-        <legend>Input</legend>
-
-        <div>
-          <label for="append">Add a new node at the end of the linked list</label>
-          <div>
-            <input type="text" id="append">
-            <button type="button" id="append-btn">Append</button>
-          </div>
-        </div>
-
-        <div>
-          <label for="prepend">Add a new node at the start of the linked list</label>
-          <div>
-            <input type="text" id="prepend">
-            <button type="button" id="prepend-btn">Prepend</button>
-          </div>
-        </div>
-
-        <div>
-          <label for="at">Shows the node value at the given index</label>
-          <div>
-            <input type="number" id="at">
-            <p id="at-result"></p>
-          </div>
-        </div>
-
-        <div>
-          <label for="find">Returns the index where given value was first found</label>
-          <div>
-            <input type="text" id="find">
-            <p id="find-result"></p>
-          </div>
-        </div>
-
-        <div>
-          <label for="insert-at-value">Inserts new node with provided value at the given index</label>
-          <div>
-            <div>
-              <input id="insert-at-value" type="text" placeholder="value">
-              <input type="number" id="insert-at-index" placeholder="index">
-            </div>
-            <button type="button" id="insert-at-btn">Insert</button>
-          </div>
-        </div>
-
-        <div>
-          <label for="remove-at">Remove node at given index</label>
-          <div>
-            <div>
-              <input type="number" id="remove-at" placeholder="index">
-            </div>
-            <button type="button" id="remove-at-btn">Remove</button>
-          </div>
-        </div>
-
-        <div>
-          <button type="button" id="pop-btn">Pop</button>
-        </div>
+        <legend>Output</legend>
+        <p id="output"></p>
       </fieldset>
-    </form>
-  </section>
-
-  <section>
-    <fieldset>
-      <legend>Output</legend>
-      <p id="output"></p>
-    </fieldset>
-  </section>
-
-  <section>
-    <fieldset>
-      <legend>Information</legend>
-      <p>Size: <span id="size"></span></p>
-      <p>Head: <span id="head"></span></p>
-      <p>Tail: <span id="tail"></span></p>
-    </fieldset>
-  </section>
+    </section>
+    <section>
+      <fieldset>
+        <legend>Information</legend>
+        <p>Size: <span id="size"></span></p>
+        <p>Head: <span id="head"></span></p>
+        <p>Tail: <span id="tail"></span></p>
+      </fieldset>
+    </section>
+  </div>
 </body>
 </html>

@@ -87,7 +87,10 @@ function updateDisplay(){
 }
 
 function updateOutput(){
-  output.textContent = list.toString();
+  output.innerHTML = "";
+  const nodeList = list.getHTMLNodesList();
+  nodeList.forEach(node => output.append(node))
+
   handleAt();
   handleFind();
 }

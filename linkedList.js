@@ -177,7 +177,7 @@ export class LinkedList {
   }
 
   /**
-  * Returns visual representation of the list.
+  * Returns visual representation of the list for console.
   * @returns {string}
   */
   toString(){
@@ -188,6 +188,23 @@ export class LinkedList {
       pointer = pointer.nextNode;
     }
     result += "null"
+    return result
+  }
+
+  getHTMLNodesList(){
+    const result = [];
+    let pointer = this.head;
+    while(pointer){
+      const nodeElement = document.createElement("div");
+      nodeElement.textContent = pointer.value;
+      nodeElement.classList.add("node");
+      result.push(nodeElement);
+      pointer = pointer.nextNode;
+    }
+    const nullNode = document.createElement("div");
+    nullNode.textContent = "NULL";
+    nullNode.classList.add("null-node");
+    result.push(nullNode)
     return result
   }
 }
