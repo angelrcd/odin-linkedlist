@@ -191,13 +191,3 @@ export class LinkedList {
     return result
   }
 }
-
-const list = new LinkedList();
-list.append("A");
-list.append("B");
-list.append("C");
-list.append("D");
-list.append("E");
-console.log(list.toString());
-list.insertAt("AS", "1");
-console.log(list.toString());

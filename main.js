@@ -17,6 +17,10 @@ const findInput = document.querySelector("#find");
 const insertAtBtn = document.querySelector("#insert-at-btn");
 const removeAtBtn = document.querySelector("#remove-at-btn");
 
+const sizeOutput = document.querySelector("#size");
+const headOutput = document.querySelector("#head");
+const tailOutput = document.querySelector("#tail");
+
 
 updateDisplay();
 
@@ -78,9 +82,20 @@ removeAtBtn.addEventListener("click", () => {
 })
 
 function updateDisplay(){
+  updateOutput();
+  updateInformation();
+}
+
+function updateOutput(){
   output.textContent = list.toString();
   handleAt();
   handleFind();
+}
+
+function updateInformation(){
+  sizeOutput.textContent = list.size;
+  headOutput.textContent = list.head.value;
+  tailOutput.textContent = list.tail.value;
 }
 
 function handleAt(){
